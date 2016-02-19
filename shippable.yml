@@ -1,0 +1,17 @@
+# Language setting
+language: node_js
+
+# Version number
+node_js:
+  - "0.10"
+
+env:
+  global:
+    - FOO=bar
+    - FIZZ=bin
+
+script:
+  - echo "Hello, World!"
+
+after_success:
+  - echo "The job succeeded!!!!"
