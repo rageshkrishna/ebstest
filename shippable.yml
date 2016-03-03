@@ -17,4 +17,5 @@ build:
     pull: false
   ci:
     - export EBS_IMAGE_NAME=ragesh/ebstest:$BRANCH.$BUILD_NUMBER
+    - export EBS_VERSION=ragesh.ebstest.$BRANCH.$BUILD_NUMBER
     - docker build -t=$EBS_IMAGE_NAME .
