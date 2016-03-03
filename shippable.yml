@@ -16,6 +16,7 @@ build:
     image_tag: prod
     pull: false
   ci:
-    - export EBS_IMAGE_NAME=ragesh/ebstest:$BRANCH.$BUILD_NUMBER
+    - export EBS_IMAGE_TAG=$BRANCH.$BUILD_NUMBER
+    - export EBS_IMAGE_NAME=ragesh/ebstest:$EBS_IMAGE_TAG
     - export EBS_VERSION=ragesh.ebstest.$BRANCH.$BUILD_NUMBER
     - docker build -t=$EBS_IMAGE_NAME .
