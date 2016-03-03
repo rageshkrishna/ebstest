@@ -10,8 +10,11 @@ env:
     - FOO=bar
     - FIZZ=bin
 
-script:
-  - echo "Hello, World!"
-
-after_success:
-  - echo "The job succeeded!!!!"
+build:
+  pre_ci_boot:
+    image_name: drydock/u14nod
+    image_tag: prod
+    pull: false
+  ci:
+    - export EBS_IMAGE_NAME=ragesh/ebstest:$BRANCH.$BUILD_NUMBER
+    - docker build -t $EBS_IMAGE_NAME
