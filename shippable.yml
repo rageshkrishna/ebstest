@@ -21,3 +21,8 @@ build:
     - export EBS_VERSION=ragesh.ebstest.$EBS_IMAGE_TAG
     - docker build -t=ragesh/ebstest:$EBS_IMAGE_TAG .
     - docker push ragesh/ebstest:$EBS_IMAGE_TAG
+    
+integrations:
+  hub:
+    - integration_name: "Ragesh - Docker"
+      type: docker
